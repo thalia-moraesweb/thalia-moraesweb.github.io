@@ -1,2 +1,2 @@
-# thalia-moraesweb.github.io
+# Portfólio Thalia
 Portfólio de projetos Front-End
