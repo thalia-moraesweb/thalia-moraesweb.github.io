@@ -181,7 +181,7 @@ o flex-wrap não funciona */
     /* Etapa 2: chamar e configurar a 
     animação  */
     animation-name: aparecer;
-    animation-duration: 5s;
+    animation-duration: 4s;
     /* animation-iteration-count: infinite;
     -o-animation-direction: alternate-reverse; */
 }
