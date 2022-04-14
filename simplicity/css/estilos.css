@@ -48,9 +48,12 @@ header {
     background-color: whitesmoke;
     text-transform: uppercase;
     
+
     /* Deixar o cabeçalho fixo */
     position: sticky;
     top: 0;
+
+    z-index: 1000;
 }
 
 /* Regra para um elemento (no caso, uma div) com
@@ -97,13 +100,12 @@ nav h2 a:focus,
     list-style: none;
     padding: 0;
     margin: 0;
-
     /* Esta propriedade será 
     usada posteriormente para esconder 
     a lista */
     display: none; 
 }
-/* inline- a, span, img com tem eles tem que usar o flex. */
+/* inline- a, span, img com tem eles tem que usar o flex.*/
 .links-menu a {
     color: black;
     font-weight: bold;
@@ -113,6 +115,8 @@ nav h2 a:focus,
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color:whitesmoke ;
 }
 
 /* Esta regra somente irá funcionar
