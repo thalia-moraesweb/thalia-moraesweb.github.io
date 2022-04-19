@@ -305,7 +305,7 @@ td:nth-child(2) { text-align: center;}
 tr:nth-child(even) {background-color: lightseagreen;}
 
 form { 
-    background-color: aquamarine;
+    background-color: rgb(58, 230, 239);
     width: 95%;
     margin: auto;
     padding: 1rem;
