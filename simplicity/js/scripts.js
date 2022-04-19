@@ -70,8 +70,7 @@ textMensagem.addEventListener("input", function(){
    let contagem = quantidade - conteudo.length;
 
    //Adicionando a contagem ao elemento HTML
-   bCaracteres.textContent = contagem;
-   
+   bCaracteres.textContent = contagem; 
    /* console.log(contagem);  */
   /* DESAFIO: Se for zero; vermelho
    Senão, preto */
@@ -83,3 +82,36 @@ textMensagem.addEventListener("input", function(){
        textMensagem.style.boxShadow = "black 0 0 10px";
    }
 });
+
+
+/* programação de Formspree */
+var form = document.getElementById("my-form");
+    
+async function handleSubmit(event) {
+  event.preventDefault();
+  var status = document.getElementById("my-form-status");
+  var data = new FormData(event.target);
+  fetch(event.target.action, {
+    method: form.method,
+    body: data,
+    headers: {
+        'Accept': 'application/json'
+    }
+  }).then(response => {
+    if (response.ok) {
+      status.innerHTML = "Obrigado por enviar a sua mensagem!";
+      form.reset()
+    } else {
+      response.json().then(data => {
+        if (Object.hasOwn(data, 'errors')) {
+          status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+        } else {
+          status.innerHTML = "Oops! Deu ruim! Tente novamente mais tarde"
+        }
+      })
+    }
+  }).catch(error => {
+    status.innerHTML = "Oops! There was a problem submitting your form"
+  });
+}
+form.addEventListener("submit", handleSubmit)
