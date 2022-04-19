@@ -51,5 +51,35 @@ VMasker(inputCep).maskPattern("99999-999");
 VMasker(inputTelefone).maskPattern("(99) 9999-9999");
 
 
+/* Programação do contador de caracteres
+do campo mensagem */
+const spanMaximo = formulario.querySelector("#maximo");
+const bCaracteres = formulario.querySelector("#caracteres");
+const textMensagem = formulario.querySelector("#mensagem");
 
+/* Determinar a quantidade maxima de caracteres do campo mensagem */
+let quantidade = 100;
 
+textMensagem.addEventListener("input", function(){
+   /*  console.log(textMensagem.value); */
+
+   //Capturando o que for digitado
+   let conteudo = textMensagem.value;
+
+   //criando uma contagem regressiva    
+   let contagem = quantidade - conteudo.length;
+
+   //Adicionando a contagem ao elemento HTML
+   bCaracteres.textContent = contagem;
+   
+   /* console.log(contagem);  */
+  /* DESAFIO: Se for zero; vermelho
+   Senão, preto */
+   if (contagem == 0) {
+       bCaracteres.style.color = "red";
+       textMensagem.style.boxShadow = "red 0 0 10px";
+   } else {
+       bCaracteres.style.color = "black";
+       textMensagem.style.boxShadow = "black 0 0 10px";
+   }
+});
